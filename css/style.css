@@ -948,6 +948,10 @@ img {
     -webkit-text-fill-color: var(--cyan)
 }
 
+.stat-block:last-child .stat-num::after {
+    content: '%';
+}
+
 .stat-label {
     font-size: .75rem;
     color: var(--text3);
