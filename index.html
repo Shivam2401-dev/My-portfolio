@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shivam — Creative Developer & Designer</title>
+    <meta name="description"
+        content="Shivam's portfolio — A creative developer building stunning digital experiences. Available for hire.">
+    <meta name="author" content="Shivam">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050510">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <canvas id="loaderCanvas"></canvas>
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="preloader-logo-bracket">&lt;</span>
+                <span class="preloader-logo-text">Shivam</span>
+                <span class="preloader-logo-bracket">/&gt;</span>
+            </div>
+            <div class="preloader-counter" id="preloaderCounter">0 %</div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill" id="preloaderBarFill"></div>
+            </div>
+            <div class="preloader-tagline">Loading experience...</div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE CANVAS -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- NOISE -->
+    <div class="noise"></div>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" data-hover>
+                <span class="nav-logo-char">&lt;</span>Shivam<span class="nav-logo-char">/&gt;</span>
+            </a>
+            <!-- <div class="nav-status">
+                <span class="status-dot"></span>
+                Available for work
+            </div> -->
+            <button class="nav-burger" id="navBurger" aria-label="Menu">
+                <span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link" data-hover>About</a>
+                <a href="#skills" class="nav-link" data-hover>Skills</a>
+                <a href="#work" class="nav-link" data-hover>Work</a>
+                <a href="#experience" class="nav-link" data-hover>Journey</a>
+                <a href="#hire" class="nav-link nav-link-cta" data-hover>Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow" data-reveal>
+                <span class="status-dot"></span> Hello, I'm
+            </div>
+            <h1 class="hero-title" data-reveal data-delay="1">
+                <span class="hero-title-line"><span class="hero-title-word" data-glitch="Shivam">Shivam</span></span>
+            </h1>
+            <div class="hero-sub" data-reveal data-delay="2">
+                <span class="hero-sub-static">I craft </span>
+                <span class="hero-typed" id="heroTyped"></span>
+                <span class="hero-typed-cursor"></span>
+            </div>
+            <p class="hero-desc" data-reveal data-delay="3">
+                Pixel-perfect interfaces · Buttery-smooth animations · Code that scales
+            </p>
+            <div class="hero-actions" data-reveal data-delay="4">
+                <a href="#work" class="btn-glow" data-hover>
+                    <span>Explore My Work</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                </a>
+                <a href="#hire" class="btn-glass" data-hover>
+                    <span>Hire Me</span>
+                </a>
+            </div>
+            <div class="hero-socials" data-reveal data-delay="5">
+                <a href="https://github.com/Shivam2401-dev" target="_blank" rel="noopener" class="hero-social-link"
+                    data-hover aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg></a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="hero-social-link" data-hover
+                    aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg></a>
+                <a href="mailto:shivamsingh25104@gmail.com" class="hero-social-link" data-hover aria-label="Email"><svg
+                        width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg></a>
+            </div>
+        </div>
+        <!-- <div class="hero-scroll">
+            <div class="hero-scroll-mouse">
+                <div class="hero-scroll-wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div> -->
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-inner">
+            <span>CREATIVE DEVELOPER</span><span class="marquee-sep">◆</span>
+            <span>UI / UX DESIGN</span><span class="marquee-sep">◆</span>
+            <span>FRONTEND EXPERT</span><span class="marquee-sep">◆</span>
+            <span>REACT & NEXT.JS</span><span class="marquee-sep">◆</span>
+            <span>FULL STACK</span><span class="marquee-sep">◆</span>
+            <span>CREATIVE DEVELOPER</span><span class="marquee-sep">◆</span>
+            <span>UI / UX DESIGN</span><span class="marquee-sep">◆</span>
+            <span>FRONTEND EXPERT</span><span class="marquee-sep">◆</span>
+            <span>REACT & NEXT.JS</span><span class="marquee-sep">◆</span>
+            <span>FULL STACK</span><span class="marquee-sep">◆</span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-label" data-reveal><span>01</span> About Me</div>
+            <div class="about-layout">
+                <div class="about-visual" data-reveal>
+                    <div class="about-card-3d">
+                        <div class="about-avatar">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=SK&backgroundColor=7c3aed&textColor=ffffff&fontSize=40"
+                                alt="Shivam">
+                            <div class="about-avatar-ring"></div>
+                        </div>
+                        <div class="about-card-info">
+                            <p class="about-card-name">Shivam</p>
+                            <p class="about-card-role">Creative Developer</p>
+                        </div>
+                        <div class="about-card-shine"></div>
+                    </div>
+                </div>
+                <div class="about-text-block" data-reveal data-delay="1">
+                    <h2 class="about-headline">I don't just build websites.<br><span class="gradient-text">I build
+                            experiences.</span></h2>
+                    <p class="about-para">I'm a developer who obsesses over the invisible — the micro-interaction that
+                        makes users smile, the 60fps animation that feels effortless, the code architecture that lets
+                        teams sleep at night.</p>
+                    <p class="about-para">My sweet spot is where design meets engineering. I take beautiful mockups and
+                        turn them into production-grade products that are not just pretty, but <em>fast</em>,
+                        <em>accessible</em>, and <em>conversion-optimized</em>.
+                    </p>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat-block" data-reveal data-delay="1">
+                    <div class="stat-num" data-count="10">0</div>
+                    <div class="stat-label">Projects<br>Shipped</div>
+                </div>
+                <div class="stat-block" data-reveal data-delay="2">
+                    <div class="stat-num" data-count="2">0</div>
+                    <div class="stat-label">Years of<br>Experience</div>
+                </div>
+                <div class="stat-block" data-reveal data-delay="3">
+                    <div class="stat-num" data-count="15">0</div>
+                    <div class="stat-label">Technologies<br>Mastered</div>
+                </div>
+                <div class="stat-block" data-reveal data-delay="4">
+                    <div class="stat-num" data-count="100">0</div>
+                    <div class="stat-label">Client<br>Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <div class="section-label" data-reveal><span>02</span> My Arsenal</div>
+            <p class="skills-subtitle" data-reveal>Technologies I use to bring ideas to life</p>
+            <div class="skills-cards">
+                <!-- Frontend -->
+                <div class="scard" data-reveal data-delay="1">
+                    <div class="scard-border"></div>
+                    <div class="scard-content">
+                        <div class="scard-icon">⚡</div>
+                        <h3 class="scard-title">Frontend</h3>
+                        <p class="scard-desc">Building beautiful, responsive interfaces that users love</p>
+                        <div class="scard-techs">
+                            <div class="scard-tech"><span class="scard-tech-name">HTML5 / CSS3</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">JavaScript</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">React</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="70"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">Tailwind CSS</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="scard" data-reveal data-delay="2">
+                    <div class="scard-border"></div>
+                    <div class="scard-content">
+                        <div class="scard-icon">🚀</div>
+                        <h3 class="scard-title">Backend</h3>
+                        <p class="scard-desc">Scalable APIs and server-side logic that power apps</p>
+                        <div class="scard-techs">
+                            <div class="scard-tech"><span class="scard-tech-name">Node.js</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">Express</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="72"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">PHP</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="70"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">Python</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="scard" data-reveal data-delay="3">
+                    <div class="scard-border"></div>
+                    <div class="scard-content">
+                        <div class="scard-icon">🛠️</div>
+                        <h3 class="scard-title">Tools & Data</h3>
+                        <p class="scard-desc">Version control, databases, and design tools</p>
+                        <div class="scard-techs">
+                            <div class="scard-tech"><span class="scard-tech-name">Git / GitHub</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">MySQL</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">MongoDB</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="60"></div>
+                                </div>
+                            </div>
+                            <div class="scard-tech"><span class="scard-tech-name">Figma</span>
+                                <div class="scard-bar">
+                                    <div class="skill-fill" data-width="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK / PROJECTS -->
+    <section class="section" id="work">
+        <div class="container">
+            <div class="section-label" data-reveal><span>03</span> Featured Work</div>
+        </div>
+        <div class="work-showcase">
+            <div class="work-item" data-reveal>
+                <div class="work-item-visual" style="--accent: #7c3aed">
+                    <div class="work-item-num">01</div>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)"
+                        stroke-width="0.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                </div>
+                <div class="work-item-info">
+                    <span class="work-item-tag">Full Stack</span>
+                    <h3 class="work-item-title">E-Commerce Dashboard</h3>
+                    <p class="work-item-desc">Real-time analytics dashboard with product management, responsive charts,
+                        and dark mode — built for scale.</p>
+                    <div class="work-item-tech">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span><span>Chart.js</span>
+                    </div>
+                    <div class="work-item-links"><a href="#" data-hover>Live Demo →</a><a href="#" data-hover>GitHub
+                            →</a></div>
+                </div>
+            </div>
+            <div class="work-item work-item-reverse" data-reveal>
+                <div class="work-item-visual" style="--accent: #ec4899">
+                    <div class="work-item-num">02</div>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)"
+                        stroke-width="0.5">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                </div>
+                <div class="work-item-info">
+                    <span class="work-item-tag">Real-Time</span>
+                    <h3 class="work-item-title">Chat Application</h3>
+                    <p class="work-item-desc">End-to-end encrypted messaging with group chats, read receipts, media
+                        sharing, and push notifications.</p>
+                    <div class="work-item-tech">
+                        <span>Socket.io</span><span>Express</span><span>React</span><span>JWT</span>
+                    </div>
+                    <div class="work-item-links"><a href="#" data-hover>Live Demo →</a><a href="#" data-hover>GitHub
+                            →</a></div>
+                </div>
+            </div>
+            <div class="work-item" data-reveal>
+                <div class="work-item-visual" style="--accent: #06b6d4">
+                    <div class="work-item-num">03</div>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)"
+                        stroke-width="0.5">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div>
+                <div class="work-item-info">
+                    <span class="work-item-tag">Creative</span>
+                    <h3 class="work-item-title">This Portfolio</h3>
+                    <p class="work-item-desc">The scroll-animated, interactive portfolio you're exploring right now —
+                        zero frameworks, pure creativity.</p>
+                    <div class="work-item-tech">
+                        <span>HTML5</span><span>CSS3</span><span>Canvas</span><span>JavaScript</span>
+                    </div>
+                    <div class="work-item-links"><a href="#" data-hover>Source Code →</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <div class="section-label" data-reveal><span>04</span> My Journey</div>
+            <div class="exp-timeline">
+                <div class="exp-item" data-reveal data-delay="1">
+                    <div class="exp-dot">
+                        <div class="exp-dot-pulse"></div>
+                    </div>
+                    <div class="exp-card">
+                        <div class="exp-year">2024 — Now</div>
+                        <h3 class="exp-role">Frontend Developer</h3>
+                        <p class="exp-company">Freelance</p>
+                        <p class="exp-desc">Building modern web apps for clients — React, animations, responsive design,
+                            performance optimization.</p>
+                    </div>
+                </div>
+                <div class="exp-item" data-reveal data-delay="2">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-year">2023 — 2024</div>
+                        <h3 class="exp-role">Web Dev Intern</h3>
+                        <p class="exp-company">Tech Company</p>
+                        <p class="exp-desc">Full-stack development, version control, agile sprints, code reviews, and
+                            production deployments.</p>
+                    </div>
+                </div>
+                <div class="exp-item" data-reveal data-delay="3">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-year">2022 — 2023</div>
+                        <h3 class="exp-role">CS Student</h3>
+                        <p class="exp-company">Self-Taught Journey</p>
+                        <p class="exp-desc">DSA, programming fundamentals, online courses, open-source contributions,
+                            and personal projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="hire">
+        <div class="container">
+            <div class="section-label" data-reveal><span>05</span> Get In Touch</div>
+            <div class="contact-layout">
+                <!-- Left: Info -->
+                <div class="contact-info" data-reveal>
+                    <h2 class="contact-headline">Let's build<br>something <span
+                            class="gradient-text">extraordinary</span></h2>
+                    <p class="contact-subtext">Have a project in mind? I'm available for freelance, full-time, and
+                        collaboration opportunities. Drop me a message!</p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-detail-label">Email</p>
+                                <a href="mailto:shivam@example.com" class="contact-detail-value"
+                                    data-hover>shivam@example.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-detail-label">Location</p>
+                                <p class="contact-detail-value">India 🇮🇳</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contact-detail-label">Availability</p>
+                                <p class="contact-detail-value"><span class="status-dot"></span> Open to work</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com/Shivam2401-dev" target="_blank" rel="noopener"
+                            class="contact-social" data-hover aria-label="GitHub"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg></a>
+                        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-social"
+                            data-hover aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener" class="contact-social" data-hover
+                            aria-label="Twitter/X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <!-- Right: Form -->
+                <div class="contact-form-wrapper" data-reveal data-delay="1">
+                    <div class="contact-form-glow"></div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="formName" class="form-input" placeholder=" " required
+                                    autocomplete="name">
+                                <label for="formName" class="form-label">Your Name</label>
+                                <div class="form-focus-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="formEmail" class="form-input" placeholder=" " required
+                                    autocomplete="email">
+                                <label for="formEmail" class="form-label">Your Email</label>
+                                <div class="form-focus-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="formSubject" class="form-input" placeholder=" " autocomplete="off">
+                            <label for="formSubject" class="form-label">Subject</label>
+                            <div class="form-focus-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="formMessage" class="form-input form-textarea" placeholder=" " required
+                                rows="5"></textarea>
+                            <label for="formMessage" class="form-label">Your Message</label>
+                            <div class="form-focus-line"></div>
+                        </div>
+                        <button type="submit" class="btn-glow btn-submit" data-hover id="formSubmitBtn">
+                            <span class="btn-submit-text">Send Message</span>
+                            <span class="btn-submit-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                            </span>
+                            <span class="btn-submit-loading">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" class="spinner">
+                                    <circle cx="12" cy="12" r="10" />
+                                </svg>
+                            </span>
+                            <span class="btn-submit-success">✓ Sent!</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-copy">&copy; 2026 Shivam. Crafted with obsession.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Shivam2401-dev" target="_blank" rel="noopener" data-hover>GitHub</a>
+                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener" data-hover>LinkedIn</a>
+                    <a href="mailto:shivam@example.com" data-hover>Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
