@@ -449,7 +449,7 @@ img {
 }
 
 .hero-content {
-    max-width: 900px;
+    /* max-width: 900px; */
     position: relative;
     z-index: 2
 }
@@ -975,141 +975,255 @@ img {
 
 /* SKILLS CARDS */
 .skills-subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--text3);
     text-align: center;
     margin-top: -2rem;
     margin-bottom: 3rem
 }
 
-.skills-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem
-}
-
-.scard {
+/* SOLAR SYSTEM SKILLS */
+.solar-system-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0 6rem;
+    overflow: hidden;
     position: relative;
-    border-radius: 1.25rem;
-    padding: 2px;
-    background: var(--border);
-    transition: transform .5s var(--ease), box-shadow .5s
+    z-index: 5;
 }
 
-.scard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15)
+.solar-system {
+    position: relative;
+    width: 900px;
+    height: 900px;
+    z-index: 10;
 }
 
-.scard-border {
+.solar-system * {
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.orbit-path {
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: conic-gradient(from var(--angle, 0deg), var(--purple), var(--cyan), var(--pink), var(--purple));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: rotate-border 4s linear infinite;
-    pointer-events: none
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
 }
 
-@keyframes rotate-border {
-    to {
-        --angle: 360deg
+.orbit-1 {
+    width: 360px;
+    height: 360px;
+}
+
+.orbit-2 {
+    width: 570px;
+    height: 570px;
+}
+
+.orbit-3 {
+    width: 780px;
+    height: 780px;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: var(--bg2);
+    border: 2px solid var(--purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    color: var(--cyan);
+    font-family: var(--mono);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4), inset 0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+.sun-glow {
+    position: absolute;
+    inset: -30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+    z-index: -1;
+    animation: sun-pulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes sun-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
     }
 }
 
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false
-}
-
-.scard-content {
-    background: var(--bg2);
-    border-radius: inherit;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    height: 100%
-}
-
-.scard-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.3))
-}
-
-.scard-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: .5rem
-}
-
-.scard-desc {
-    font-size: .8rem;
-    color: var(--text3);
-    line-height: 1.6;
-    margin-bottom: 1.25rem
-}
-
-.scard-techs {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem
-}
-
-.scard-tech {
-    display: flex;
-    flex-direction: column;
-    gap: .3rem
-}
-
-.scard-tech-name {
-    font-size: .75rem;
-    color: var(--text2);
-    font-weight: 500
-}
-
-.scard-bar {
-    height: 5px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 10px;
-    overflow: hidden
-}
-
-.skill-fill {
-    height: 100%;
-    width: 0;
-    background: var(--grad);
-    border-radius: 10px;
-    transition: width 1.5s var(--ease);
-    position: relative
-}
-
-.skill-fill::after {
-    content: '';
+.planet {
     position: absolute;
-    right: 0;
-    top: -1px;
-    width: 7px;
-    height: 7px;
-    background: #fff;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+    margin-left: -32px;
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    cursor: crosshair;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    /* Set up rotation around sun */
+    animation: orbit-spin var(--duration) linear infinite;
+    --anim-play-state: running;
+    animation-play-state: var(--anim-play-state);
+}
+
+.solar-system:hover .planet {
+    --anim-play-state: paused;
+}
+
+@keyframes orbit-spin {
+    from {
+        transform: rotate(var(--start-angle)) translateX(var(--radius)) rotate(calc(var(--start-angle) * -1));
+    }
+
+    to {
+        transform: rotate(calc(var(--start-angle) + 360deg)) translateX(var(--radius)) rotate(calc((var(--start-angle) + 360deg) * -1));
+    }
+}
+
+.planet:hover {
+    z-index: 30;
+}
+
+/* For planets by category: */
+.tool-planet {
+    border-color: rgba(236, 72, 153, 0.4);
+    color: var(--pink);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.1);
+}
+
+.tool-planet:hover {
+    border-color: var(--pink);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
+    background: rgba(236, 72, 153, 0.15);
+}
+
+.backend-planet {
+    border-color: rgba(6, 182, 212, 0.4);
+    color: var(--cyan);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+}
+
+.backend-planet:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+    background: rgba(6, 182, 212, 0.15);
+}
+
+.front-planet {
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #a78bfa;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+.front-planet:hover {
+    border-color: var(--purple);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.15);
+}
+
+.planet-tooltip {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    /* Start slightly lower for entrance animation */
+    transform: translateX(-50%) translateY(10px);
+    background: var(--glass2);
+    border: 1px solid var(--border2);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: var(--font);
+    color: #fff;
+    white-space: nowrap;
     opacity: 0;
-    transition: opacity .3s .8s
+    visibility: hidden;
+    backdrop-filter: blur(12px);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-.skill-fill[style*='width']::after {
-    opacity: 1
+.planet:hover .planet-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
 
-@media(max-width:768px) {
-    .skills-cards {
-        grid-template-columns: 1fr
+.tt-bar {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tt-fill {
+    height: 100%;
+    background: var(--grad);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+@media(max-width: 768px) {
+    .solar-system {
+        transform: scale(0.65);
+    }
+
+    .solar-system-wrapper {
+        padding: 0;
+        margin-top: -3rem;
+        margin-bottom: -3rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .solar-system {
+        transform: scale(0.48);
+    }
+
+    .solar-system-wrapper {
+        margin-top: -6rem;
+        margin-bottom: -6rem;
     }
 }
 
