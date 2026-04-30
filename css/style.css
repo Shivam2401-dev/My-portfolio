@@ -1218,12 +1218,23 @@ img {
 
 @media(max-width: 480px) {
     .solar-system {
-        transform: scale(0.48);
+        transform: scale(0.38);
     }
 
     .solar-system-wrapper {
-        margin-top: -6rem;
-        margin-bottom: -6rem;
+        margin-top: -8rem;
+        margin-bottom: -8rem;
+    }
+}
+
+@media(max-width: 380px) {
+    .solar-system {
+        transform: scale(0.32);
+    }
+
+    .solar-system-wrapper {
+        margin-top: -10rem;
+        margin-bottom: -10rem;
     }
 }
 

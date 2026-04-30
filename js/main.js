@@ -331,7 +331,11 @@
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
 
-            // Simulate sending (replace with real API like Formspree, EmailJS, etc.)
+            // Open mailto link
+            const subject = document.getElementById('formSubject').value.trim() || 'New Contact Submission';
+            const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+            window.location.href = `mailto:shivamsingh25104@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
             setTimeout(() => {
                 submitBtn.classList.remove('loading');
                 submitBtn.classList.add('success');
@@ -342,7 +346,7 @@
                     submitBtn.disabled = false;
                     contactForm.reset();
                 }, 3000);
-            }, 1800);
+            }, 800);
         });
     }
 
